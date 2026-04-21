@@ -28,4 +28,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deploy
-        run: " DEPLOY "
+        run: echo " DEPLOY "
