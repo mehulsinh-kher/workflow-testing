@@ -1,4 +1,6 @@
 name: pipeline
+
+#paralalism
 on: 
   push:
     branches:
