@@ -1,6 +1,6 @@
 name: pipeline
 
-#paralalism
+#PIPELINE
 on: 
   workflow_dispatch: 
 
