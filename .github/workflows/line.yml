@@ -2,10 +2,7 @@ name: pipeline
 
 #paralalism
 on: 
-  push:
-    branches:
-      - main
-      - master
+  workflow_dispatch: 
 
 jobs:
   code:
@@ -15,18 +12,21 @@ jobs:
         run: echo " CODE "
 
   build:
+    needs: code
     runs-on: ubuntu-latest
     steps:
       - name: build
         run: echo " BUILD "
 
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: test
         run: echo " TEST "
 
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: deploy
