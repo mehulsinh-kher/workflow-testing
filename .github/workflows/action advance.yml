@@ -19,16 +19,19 @@ jobs:
     - name: fetch code
       run: echo "code fetched"
   build:
+    needs: code
     runs-on: ubuntu-latest
     steps:
     - name: building container
       run: echo "Building Container for Code"
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Testing Code
       run: echo " Testing Code on Container"
   deploy:
+    needs: test
     if: inputs.environments== 'dev'
     runs-on: ubuntu-latest
     steps:
