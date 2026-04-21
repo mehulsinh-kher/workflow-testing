@@ -1,0 +1,26 @@
+name: portfolio-pipeline
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Github Pages        
+        uses: actions/configure-pages@v4
+        
+      - name: upload static files
+         uses: actions/upload-pages-artifact@v4
+
+      - name: Deploy to Github Pages
+        uses: actions/deploy-pages@v4
+        
