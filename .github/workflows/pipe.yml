@@ -1,6 +1,10 @@
 name: git-action 
-on: workflow_dispatch
-#
+on:
+  push:
+    branches: 
+    - main
+    - master
+#paralalism
 jobs:
   code:
     runs-on: ubuntu-latest
