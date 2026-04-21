@@ -36,13 +36,13 @@
         ::-webkit-scrollbar-track { background: var(--bg-color); }
         ::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 4px; }
 
-        /* Ambient Orbs - Fixed pointer-events */
+        /* Ambient Orbs */
         .orb {
             position: fixed;
             border-radius: 50%;
             filter: blur(120px);
             z-index: -1;
-            pointer-events: none; /* Prevents blocking clicks */
+            pointer-events: none;
             animation: float 20s infinite alternate;
         }
         .orb-1 {
@@ -306,7 +306,7 @@
         .footer-contact { margin-bottom: 3rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
         
         .visit-counter { margin-top: 2rem; display: inline-block; }
-        .visit-counter img { border-radius: 6px; }
+        .visit-counter img { border-radius: 4px; box-shadow: 0 0 10px rgba(0, 240, 255, 0.2); }
 
         /* Mobile Adjustments */
         @media (max-width: 900px) {
@@ -314,7 +314,7 @@
             .hero-content p { margin: 0 auto 2rem; }
             .social-links { justify-content: center; }
             .hero-image-container { max-width: 80%; margin: 0 auto; }
-            .nav-links { display: none; } /* Kept simple for single file */
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -445,7 +445,7 @@
             <p>&copy; 2026 Mehul Kher. <span style="color: var(--neon-cyan);">Crafted for Impact</span>.</p>
 
             <div class="visit-counter">
-                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fmehulsinh-kher%2Fportfolio&count_bg=%2300F0FF&title_bg=%23030A16&icon=&icon_color=%23E7E7E7&title=VISITS&edge_flat=true" alt="Visits Tracker">
+                <img src="https://komarev.com/ghpvc/?username=mehulsinh-kher-portfolio&color=00f0ff&style=flat-square&label=VISITS" alt="Visits Tracker">
             </div>
         </footer>
     </div>
