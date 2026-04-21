@@ -29,6 +29,7 @@ jobs:
     - name: Testing Code
       run: echo " Testing Code on Container"
   deploy:
+    if: inputs.environments== 'dev'
     runs-on: ubuntu-latest
     steps:
     - name: deploy site
