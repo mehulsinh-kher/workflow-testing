@@ -1,0 +1,24 @@
+name: git-action 
+on: workflow_dispatch
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+    - name: fetch code
+      run: echo "code fetched"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: building container
+      run: echo "Building Container for Code"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Testing Code
+      run: echo " Testing Code on Container
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploy site
+      run: echo " Deploying on UAT"
