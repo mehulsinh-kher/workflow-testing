@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Testing Code
-      run: echo " Testing Code on Container
+      run: echo " Testing Code on Container"
   deploy:
     runs-on: ubuntu-latest
     steps:
