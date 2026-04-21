@@ -253,6 +253,36 @@
             color: var(--neon-cyan);
         }
 
+        /* Why Hire Me Section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .why-card {
+            text-align: center;
+            border-top: 4px solid var(--neon-cyan); /* Distinctive top border */
+        }
+
+        .why-card .why-icon {
+            font-size: 3rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.4));
+        }
+
+        .why-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
         /* Timeline / Experience */
         .timeline {
             display: flex;
@@ -356,7 +386,7 @@
             }
             .social-links { justify-content: center; }
             .hero-image-container { max-width: 500px; margin: 0 auto; }
-            .nav-links { display: none; } /* Mobile menu hidden for simplicity in single-file */
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -370,6 +400,7 @@
             <a href="#" class="logo">MK.</a>
             <div class="nav-links">
                 <a href="#about">About</a>
+                <a href="#why-me">Why Me</a>
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
@@ -392,7 +423,28 @@
             </div>
             
             <div class="hero-image-container">
-                <img src="Mehul-k.png" alt="Mehul Kher - Cloud & DevOps" class="hero-image">
+                <img src="Gemini_Generated_Image_od3u1aod3u1aod3u.png" alt="Mehul Kher - Cloud & DevOps" class="hero-image">
+            </div>
+        </section>
+
+        <section id="why-me">
+            <h2 class="section-title">Why <span>Hire Me?</span></h2>
+            <div class="why-grid">
+                <div class="glass-panel why-card">
+                    <i class="fa-solid fa-shield-halved why-icon"></i>
+                    <h3>Enterprise-Scale Reliability</h3>
+                    <p>Over 5 years of proven experience managing massive infrastructure, including networks for 100+ enterprise branches with zero-downtime failover architectures.</p>
+                </div>
+                <div class="glass-panel why-card">
+                    <i class="fa-solid fa-cloud-arrow-up why-icon"></i>
+                    <h3>Bridging Legacy & Cloud</h3>
+                    <p>AWS Certified Architect adept at migrating legacy physical servers and data structures to highly optimized, scalable cloud computing environments.</p>
+                </div>
+                <div class="glass-panel why-card">
+                    <i class="fa-solid fa-bolt why-icon"></i>
+                    <h3>DevOps Automation</h3>
+                    <p>I go beyond server maintenance. I build CI/CD pipelines and automate developer environments using Docker, Git, and Ansible to eliminate operational friction.</p>
+                </div>
             </div>
         </section>
 
@@ -482,7 +534,7 @@
                 <a href="tel:+918758512979" class="btn" style="margin-left: 1rem; background: transparent;"><i class="fa-solid fa-phone"></i> +91 87585 12979</a>
             </div>
 
-            <p>&copy; 2026 Mehul Kher. Designed with <span style="color: var(--neon-cyan);">Cyber-Glassmorphism</span>.</p>
+            <p>&copy; 2026 Mehul Kher. <span style="color: var(--neon-cyan);">Crafted for Impact</span>.</p>
         </footer>
     </div>
 
