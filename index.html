@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehul | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --text-main: #ffffff;
+            --text-muted: #b3b3b3;
+            --accent: #00f0ff;
+            --accent-hover: #00c3ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Ambient Background Blobs */
+        .blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+        .blob-1 {
+            width: 400px; height: 400px;
+            background: #8e2de2;
+            top: -100px; left: -100px;
+        }
+        .blob-2 {
+            width: 500px; height: 500px;
+            background: #4a00e0;
+            bottom: -200px; right: -100px;
+        }
+
+        /* Layout & Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Glassmorphism Utility */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+            padding: 2rem;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .glass:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.5);
+            border-color: rgba(0, 240, 255, 0.3);
+        }
+
+        /* Header / Nav */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--accent);
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 60vh;
+            text-align: left;
+            margin-bottom: 5rem;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 6rem;
+        }
+
+        h2.section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Experience Grid */
+        .experience-grid, .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card .subtitle {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            color: var(--accent);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent);
+            color: #0f2027;
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+        }
+
+        /* Contact Section */
+        .contact-glass {
+            text-align: center;
+        }
+        
+        .contact-glass p {
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 0%; height: 100%;
+            background: var(--accent);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            color: #0f2027;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .nav-links { display: none; /* Simple mobile adjustment */ }
+            h2.section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="container">
+        <nav>
+            <div class="logo">M.</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <header class="hero" id="about">
+            <h1>Hi, I'm <span>Mehul.</span></h1>
+            <p>A System Engineer & Executive System Administrator with over 5 years of experience. I build robust infrastructure, solve complex architectural puzzles, and am actively charting my path into DevOps and Cloud Engineering.</p>
+            <div>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </header>
+
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-grid">
+                <div class="glass card">
+                    <h3>Sterling Accuris</h3>
+                    <div class="subtitle">Executive System Administrator | Current</div>
+                    <p>Managing and scaling enterprise-level infrastructure, ensuring high availability for critical pathology lab operations. Bridging the gap between traditional system administration and modern cloud architectures.</p>
+                </div>
+                <div class="glass card">
+                    <h3>Brainvire</h3>
+                    <div class="subtitle">System Administrator | Previous</div>
+                    <p>Spearheaded system configurations, network troubleshooting, and cross-platform hardware deployments. Established foundational infrastructure practices to support growing development teams.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Technical Arsenal</h2>
+            <div class="glass">
+                <div class="skills-container">
+                    <div class="skill-tag">Linux / Ubuntu</div>
+                    <div class="skill-tag">Windows 11</div>
+                    <div class="skill-tag">AWS</div>
+                    <div class="skill-tag">Docker</div>
+                    <div class="skill-tag">Terraform</div>
+                    <div class="skill-tag">Ansible</div>
+                    <div class="skill-tag">GitHub Actions</div>
+                    <div class="skill-tag">CI/CD Pipelines</div>
+                    <div class="skill-tag">Git</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="glass card">
+                    <h3>Vision AI Assistant</h3>
+                    <div class="subtitle">Amateur Radio Voice Integration</div>
+                    <p>Engineered a voice-activated AI assistant tailored for the Amateur Radio community. Integrated the Gemini API, Picovoice for wake-word detection, and Piper TTS to automate daily Net check-ins, note-taking, and remote broadcasting bridges.</p>
+                </div>
+                <div class="glass card">
+                    <h3>Automated CI/CD Workflows</h3>
+                    <div class="subtitle">DevOps Infrastructure</div>
+                    <p>Designed and deployed seamless CI/CD pipelines using Docker and GitHub Actions YAML workflows. Focused on reducing deployment friction, containerizing applications, and automating testing environments.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="glass contact-glass">
+                <h3>Ready to scale your infrastructure?</h3>
+                <p>Whether you need a seasoned System Engineer or a forward-thinking DevOps practitioner, my inbox is always open. Let's discuss technology, cloud architecture, or amateur radio.</p>
+                <a href="mailto:your.email@example.com" class="btn">Send a Message</a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
